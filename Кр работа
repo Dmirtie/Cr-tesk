@@ -1,0 +1,50 @@
+#1 задание среднего уровня
+# 1 парал
+def calculate_parallelepiped_volume(lenght, width, height):
+    return lenght * width * height
+lenght = float(input("введите длину"))
+width = float(input("введите ширину"))
+height = float(input("введите высоту"))
+volume_1 = calculate_parallelepiped_volume(lenght, width, height)
+#2 парал
+def calculate_parallelepiped_volume_2(lenght_2, width_2, height_2):
+    return lenght_2 * width_2 * height_2
+lenght_2 = float(input("введите длину"))
+width_2 = float(input("введите ширину"))
+height_2 = float(input("введите высоту"))
+volume_2 = calculate_parallelepiped_volume_2(lenght_2, width_2, height_2)
+
+#сравниваем
+if volume_1 > volume_2:
+    print("1 число")
+
+elif volume_1 < volume_2:
+    print("2 число")
+
+else:
+    print("они равны")
+
+#2 задание среднего уровня
+
+rows = 7
+#выводим вверх
+for i in range(2):
+    print(''* (i) + '*' * 2 + '' *(rows - 2 * i -2)+ '*' * 2)
+#выводим низ
+for i in range(rows, 0 , -1):
+    print('' * (rows - i) + '*' * i)
+
+#3 задание
+import numpy as np
+from scipy.integrate import quad
+# функция
+def f(x):
+    return np.exp(x)
+# запраштвая у пользователя згачение переменных
+a = float(input("введите a:"))
+b = float(input("введите b:"))
+# вычеслим интеграл
+integral, error = quad(f,a ,b)
+# выводим результат
+print(integral)
+
